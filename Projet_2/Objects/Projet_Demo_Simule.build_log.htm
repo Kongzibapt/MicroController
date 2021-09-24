@@ -27,16 +27,33 @@ Project File Date:  09/24/2021
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Simulé'
-assembling startup_stm32f10x_md.s...
-compiling Timer.c...
 compiling main.c...
-Source\main.c(14): warning:  #188-D: enumerated type mixed with another type
-  	NVIC_SetPendingIRQ(46);
-Source\main.c: 1 warning, 0 errors
+Source\GPIO.h(25): warning:  #1-D: last line of file ends without a newline
+  #endif
+Source\main.c(9): error:  #119: cast to type "MyTimer_Struct_TypeDef" is not allowed
+  	MyTimer_Struct_TypeDef * MyTimer = &(MyTimer_Struct_TypeDef) {.Timer = TIM4, .ARR = MON_ARR, .PSC = MON_PSC};
+Source\main.c(9): error:  #29: expected an expression
+  	MyTimer_Struct_TypeDef * MyTimer = &(MyTimer_Struct_TypeDef) {.Timer = TIM4, .ARR = MON_ARR, .PSC = MON_PSC};
+Source\main.c: 1 warning, 2 errors
+compiling Timer.c...
+Source\GPIO.h(25): warning:  #1-D: last line of file ends without a newline
+  #endif
+Source\Timer.c(16): error:  #119: cast to type "MyGPIO_Struct_TypeDef" is not allowed
+  	MyGPIO_Struct_TypeDef  * MyGPIO = &(MyGPIO_Struct_TypeDef) {.GPIO = GPIOA, .GPIO_Pin = BROCHE_LED, .GPIO_Conf = Out_Ppull};
+Source\Timer.c(16): error:  #29: expected an expression
+  	MyGPIO_Struct_TypeDef  * MyGPIO = &(MyGPIO_Struct_TypeDef) {.GPIO = GPIOA, .GPIO_Pin = BROCHE_LED, .GPIO_Conf = Out_Ppull};
+Source\Timer.c(19): error:  #167: argument of type "MyGPIO_Struct_TypeDef *" is incompatible with parameter of type "GPIO_TypeDef *"
+  	MyGPIO_Toggle(MyGPIO,MyGPIO->GPIO_Pin);
+Source\Timer.c: 1 warning, 3 errors
+assembling startup_stm32f10x_md.s...
+compiling GPIO.c...
+..\Projet_1\Source\GPIO.h(25): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Projet_1\Source\GPIO.c(33): warning:  #1-D: last line of file ends without a newline
+  }
+..\Projet_1\Source\GPIO.c: 2 warnings, 0 errors
 compiling system_stm32f10x.c...
-linking...
-Program Size: Code=548 RO-data=252 RW-data=0 ZI-data=1024  
-".\Objects\Projet_Demo_Simule.axf" - 0 Error(s), 1 Warning(s).
+".\Objects\Projet_Demo_Simule.axf" - 5 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -67,6 +84,7 @@ Package Vendor: Keil
       Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
       Source file:   Device\Source\system_stm32f10x.c
+Target not created.
 Build Time Elapsed:  00:00:02
 </pre>
 </body>
