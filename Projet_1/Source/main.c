@@ -7,18 +7,6 @@
 #define OUT_PUSHPULL_2MHZ (0x2)
 #define BROCHE_BOUTON (13)
 
-int LireValeur(int numBroche , GPIO_TypeDef* gpio) {
-	return (gpio->IDR & (0x1 << numBroche));
-}
-
-void EcrireValeur(int numBroche, GPIO_TypeDef* gpio, int valeur) {
-	if (valeur) {
-		gpio->ODR |= 1<<numBroche;
-	} else {
-		gpio->ODR &= ~(1<<numBroche);
-	}
-}
-
 int main ( void )
 {
 	MyGPIO_Struct_TypeDef  * MyGPIO = &(MyGPIO_Struct_TypeDef) {.GPIO = GPIOA, .GPIO_Pin = BROCHE_LED, .GPIO_Conf = Out_Ppull};
