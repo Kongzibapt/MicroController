@@ -398,6 +398,11 @@
               <FileType>1</FileType>
               <FilePath>.\Source\Timer.c</FilePath>
             </File>
+            <File>
+              <FileName>GPIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Projet_1\Source\GPIO.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -799,6 +804,11 @@
               <FileName>Timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Source\Timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>GPIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Projet_1\Source\GPIO.c</FilePath>
             </File>
           </Files>
         </Group>

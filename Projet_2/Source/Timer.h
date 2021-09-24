@@ -2,7 +2,7 @@
 	#define TIMER_H
 	#include "stm32f10x.h"
 
-	#define MON_ARR 0xFFFF
+	#define MON_ARR 0x1111
 	#define MON_PSC 0x202E
 	
 	typedef struct
@@ -13,7 +13,8 @@
 	} MyTimer_Struct_TypeDef;
 	
 	void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * Timer ) ;
+	void TIM4_IRQHandler(void) ;
 
-	// #define MyTimer_Base_Start ( Timer ) ( . . . )
-	// #define MyTimer_Base_Stop ( Timer ) ( . . . )
+	#define MyTimer_Base_Start ( Timer ) ( . . . )
+	#define MyTimer_Base_Stop ( Timer ) ( . . . )
 #endif
