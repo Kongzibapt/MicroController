@@ -8,13 +8,20 @@ void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * Timer ) {
 	Timer->Timer->ARR = Timer->ARR;
 	Timer->Timer->PSC = Timer->PSC;
 	Timer->Timer->CR1 |= TIM_CR1_CEN;
-	Timer->Timer->DIER = TIM_DIER_UIE; // Vers pending
+}
+
+void MyTimer_ActiveIT (TIM_TypeDef * Timer, char Prio){
+	Timer->DIER = TIM_DIER_UIE; // Vers pending
 	NVIC->ISER[0] |= NVIC_ISER_SETENA_30;
 }
 
-
-
 void TIM4_IRQHandler(void) {
-	MyGPIO_Toggle(GPIOA, BROCHE_LED);
 	TIM4->SR &= ~(TIM_SR_UIF);
+	MyGPIO_Toggle(GPIOA, BROCHE_LED);
+}
+
+void MyTimer_PWM(TIM_TypeDef* Timer, char Channel ){
+	Timer->CCMR1 = TIM_CCMR1_OC1M_1 + TIM_CCMR1_OC1M_2;
+	Timer->CCR1 = MON_CC1;
+	Timer->CCER = TIM_CCER_CC1E;
 }

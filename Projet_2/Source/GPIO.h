@@ -16,6 +16,10 @@ typedef  struct{
 #define AltOut_Ppull 0xA // a completer
 #define AltOut_OD 0xE // a completer
 
+#define BROCHE_LED 5
+#define BROCHE_PWM 6
+
+
 void MyGPIO_Init( MyGPIO_Struct_TypeDef*GPIOStructPtr ) ;
 int MyGPIO_Read(GPIO_TypeDef*GPIO ,char GPIO_Pin ) ;  //  renvoie 0 ou autre  chose  different  de 0
 void MyGPIO_Set(GPIO_TypeDef*GPIO ,char GPIO_Pin ) ;
