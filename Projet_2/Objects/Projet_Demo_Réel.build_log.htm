@@ -27,21 +27,14 @@ Project File Date:  09/27/2021
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Rebuild target 'Réel'
-assembling startup_stm32f10x_md.s...
 compiling main.c...
 compiling system_stm32f10x.c...
-Source/Timer.c(4): warning: 'BROCHE_LED' macro redefined [-Wmacro-redefined]
-#define BROCHE_LED (5)
-        ^
-Source/GPIO.h(19): note: previous definition is here
-#define BROCHE_LED 5
-        ^
-1 warning generated.
+assembling startup_stm32f10x_md.s...
 compiling Timer.c...
 compiling GPIO.c...
 linking...
-Program Size: Code=768 RO-data=252 RW-data=0 ZI-data=1024  
-".\Objects\Projet_Demo_Réel.axf" - 0 Error(s), 1 Warning(s).
+Program Size: Code=788 RO-data=252 RW-data=0 ZI-data=1024  
+".\Objects\Projet_Demo_Réel.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -68,10 +61,10 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.4.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Source file:   Device\Source\system_stm32f10x.c
-      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Source file:   Device\Source\system_stm32f10x.c
       Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

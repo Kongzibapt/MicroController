@@ -16,8 +16,7 @@ typedef  struct{
 #define AltOut_Ppull 0xA // a completer
 #define AltOut_OD 0xE // a completer
 
-#define BROCHE_LED 5
-#define BROCHE_PWM 6
+
 
 
 void MyGPIO_Init( MyGPIO_Struct_TypeDef*GPIOStructPtr ) ;

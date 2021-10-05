@@ -1,8 +1,11 @@
 #include "stm32f10x.h"
 #include "Timer.h"
 #include "GPIO.h"
-#define BROCHE_LED (5)
 #define OUT_PUSHPULL_2MHZ (0x2)
+
+__WEAK void TIM4_callback (void) 
+{
+}
 
 void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * Timer ) {
 	Timer->Timer->ARR = Timer->ARR;
@@ -17,11 +20,14 @@ void MyTimer_ActiveIT (TIM_TypeDef * Timer, char Prio){
 
 void TIM4_IRQHandler(void) {
 	TIM4->SR &= ~(TIM_SR_UIF);
-	MyGPIO_Toggle(GPIOA, BROCHE_LED);
+	TIM4_callback();
+}
+
+void Modif_RapportCyclique(TIM_TypeDef* Timer, unsigned short mon_cc1){
+	Timer->CCR1 = mon_cc1;
 }
 
 void MyTimer_PWM(TIM_TypeDef* Timer, char Channel ){
 	Timer->CCMR1 = TIM_CCMR1_OC1M_1 + TIM_CCMR1_OC1M_2;
-	Timer->CCR1 = MON_CC1;
 	Timer->CCER = TIM_CCER_CC1E;
 }

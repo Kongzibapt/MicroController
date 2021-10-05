@@ -29,25 +29,12 @@ Project File Date:  09/27/2021
 Rebuild target 'Simulé'
 assembling startup_stm32f10x_md.s...
 compiling main.c...
-Source\main.c(10): error:  #119: cast to type "MyTimer_Struct_TypeDef" is not allowed
-  	MyTimer_Struct_TypeDef * MyTimer = &(MyTimer_Struct_TypeDef) {.Timer = TIM4, .ARR = MON_ARR, .PSC = MON_PSC};
-Source\main.c(10): error:  #29: expected an expression
-  	MyTimer_Struct_TypeDef * MyTimer = &(MyTimer_Struct_TypeDef) {.Timer = TIM4, .ARR = MON_ARR, .PSC = MON_PSC};
-Source\main.c(11): error:  #119: cast to type "MyGPIO_Struct_TypeDef" is not allowed
-  	MyGPIO_Struct_TypeDef* MyGPIO = &(MyGPIO_Struct_TypeDef) {.GPIO = GPIOA, .GPIO_Pin = BROCHE_LED, .GPIO_Conf = Out_Ppull};
-Source\main.c(11): error:  #29: expected an expression
-  	MyGPIO_Struct_TypeDef* MyGPIO = &(MyGPIO_Struct_TypeDef) {.GPIO = GPIOA, .GPIO_Pin = BROCHE_LED, .GPIO_Conf = Out_Ppull};
-Source\main.c: 0 warnings, 4 errors
 compiling Timer.c...
-Source\Timer.c(25): warning:  #1-D: last line of file ends without a newline
-  }
-Source\Timer.c: 1 warning, 0 errors
 compiling system_stm32f10x.c...
 compiling GPIO.c...
-..\Projet_1\Source\GPIO.h(25): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\Projet_1\Source\GPIO.c: 1 warning, 0 errors
-".\Objects\Projet_Demo_Simule.axf" - 4 Error(s), 2 Warning(s).
+linking...
+Program Size: Code=880 RO-data=252 RW-data=0 ZI-data=1024  
+".\Objects\Projet_Demo_Simule.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -74,11 +61,10 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.4.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Source file:   Device\Source\system_stm32f10x.c
-      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Source file:   Device\Source\system_stm32f10x.c
       Include file:  RTE_Driver\Config\RTE_Device.h
-Target not created.
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
 Build Time Elapsed:  00:00:01
 </pre>
 </body>
